@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %} 
+{{ services.name }}
+{% endblock %}
+
+{% block style %}
+<style>
+    .image {
+        width: 300px;
+    }
+</style>
+{% endblock %}
+
+{% block body %} 
+<p>{{ services.description }}</p>
+    <img class="image" src="{{ services.image.url }}" alt="">
+{% endblock %}
