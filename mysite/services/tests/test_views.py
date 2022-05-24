@@ -1,8 +1,9 @@
 from django.test import Client, TestCase
 from django.urls import reverse
 
+
 class TestServicesViews(TestCase):
-    def setUp(self) :
+    def setUp(self):
         self.client = Client()
 
     def test_get_services_page(self):
