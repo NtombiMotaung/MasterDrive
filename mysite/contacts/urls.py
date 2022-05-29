@@ -7,6 +7,7 @@ app_name = "contacts"
 urlpatterns = [
 
     path("", contacts, name="get-contacts-page"),
+    path("contacts", contacts, name= "contacts_form"),
     
 
 
