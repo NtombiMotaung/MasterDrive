@@ -3,7 +3,7 @@ from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 
-from gallery.models import ContactImages
+from services.models import ContactImages
 
 # Create your views here.
 def contact_page(request):
