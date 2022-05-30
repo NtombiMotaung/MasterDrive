@@ -2,16 +2,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from django.shortcuts import render
+from mysite.views import index
 
-from gallery.models import BackgroundImage
 
-def index(request):
-    bg = BackgroundImage.objects.last()
-    context = {
-        "bg": bg,
-    }
-    return render(request, "public/index.html", context)
 
 urlpatterns = (
     [

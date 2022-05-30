@@ -3,6 +3,8 @@ from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 
+from gallery.models import ContactImages
+
 # Create your views here.
 def contact_page(request):
     if request.method == "POST":
@@ -17,5 +19,13 @@ def contact_page(request):
                 return HttpResponse("Invalid header found.")
             return redirect("contacts:get-contacts-page")
 
+
+    images = ContactImages.objects.last()
+
     form = ContactForm()
-    return render(request, "public/contacts/contacts.html", {"form":form})
+
+    context = {
+        "form":form,
+        "images": images,
+    }
+    return render(request, "public/contacts/contacts.html", context)

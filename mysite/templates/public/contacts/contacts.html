@@ -1,26 +1,40 @@
-<!--Contact form-->
-<div style="margin:80px">
-    <h1>Contact</h1>
+{% extends 'base.html' %}
 
-    <h4>Contact us directly if you have any questions</h4>
-    <p>
-        Company Name:  Driving Masters Pty Ltd 
-        <br>
-        Email: info@drivingmasters.co.za
-        <br>
-        Tel: 0722779590
-        <br>
-        Tel: 0833072491
-        <br>
-        Address:  Rietvlei Farm, 101 Swartkoppies Road, Alberton, 1448
-    </p>
-    <p>
-        Please write your name, email address and a message below if you have any questions.
-        One of our staff members will be happy to contact you directly and answer your questions as soon as possible. 
-    </p>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
+{% block body %}
+<div class="flex">
+    <div class="w-1/4 bg-yellow-200">
+        <span class="material-icons-outlined">
+            location_on
+        </span>
+
+        <div class="shadow-lg">
+            <img src="{{ images.image1.url }}" class=" shadow-lg">
+        </div>
+        <div class="shadow-lg">
+            <img src="{{ images.image2.url }}" class=" shadow-lg">
+        </div>
+        <div class="shadow-lg">
+            <img src="{{ images.image2.url }}" class=" shadow-lg">
+        </div>
+
+    </div>
+    <div class="w-3/4 px-24">
+        <h1 class="text-6xl">Contact</h1>
+
+        <h4>Contact us directly if you have any questions</h4>
+
+        <p>
+
+            Please write your name, email address and a message below if you have any questions.
+            <br>
+            One of our staff members will be happy to contact you directly and answer your questions as soon as
+            possible.
+        </p>
+        <form class="shadow-xl" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </div>
+{% endblock %}
