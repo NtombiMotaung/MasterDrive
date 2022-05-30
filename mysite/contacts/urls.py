@@ -1,14 +1,10 @@
 from django.urls import path
-from contacts.views import contacts
+from contacts.views import contact_page
 
 
 app_name = "contacts"
 
 urlpatterns = [
 
-    path("", contacts, name="get-contacts-page"),
-    path("contacts", contacts, name= "contacts_form"),
-    
-
-
+    path("", contact_page, name="get-contacts-page"),
 ]
