@@ -2,10 +2,23 @@
 
 {% block body %}
 <div class="flex">
-    <div class="w-1/4 bg-yellow-200">
-        <span class="material-icons-outlined">
+    <div class="w-2/6">
+        <div class="flip-box">
+            <div class="flip-box-inner">
+              <div class="flip-box-front">
+                <img src="{{ images.image1.url }}" class=" shadow-lg">
+              </div>
+              <div class="flip-box-back">
+                <h2>Paris</h2>
+                <p>Just checking</p>
+              </div>
+            </div>
+          </div> 
+
+          
+        <!-- <span class="material-icons-outlined">
             location_on
-        </span>
+        </span> -->
 
         <div class="shadow-lg">
             <img src="{{ images.image1.url }}" class=" shadow-lg">
@@ -14,11 +27,11 @@
             <img src="{{ images.image2.url }}" class=" shadow-lg">
         </div>
         <div class="shadow-lg">
-            <img src="{{ images.image2.url }}" class=" shadow-lg">
+            <img src="{{ images.image3.url }}" class=" shadow-lg">
         </div>
 
     </div>
-    <div class="w-3/4 px-24">
+    <div class="w- 4/6 px-24">
         <h1 class="text-6xl">Contact</h1>
 
         <h4>Contact us directly if you have any questions</h4>
@@ -38,3 +51,4 @@
     </div>
 </div>
 {% endblock %}
+

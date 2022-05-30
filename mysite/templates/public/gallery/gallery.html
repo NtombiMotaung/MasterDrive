@@ -3,21 +3,54 @@
 <!DOCTYPE html>
 
 
-<html lang = "en">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>WELCOME TO THE GALLERY PAGE</title>
-    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+        integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <img src = "{% static 'mysite/images/flowers.png' %}">
-
-
+    {% include 'components/navbar.html' %}
+    <div class="flex mt-56">
+        <div class="flip-box">
+            <div class="flip-box-inner">
+                <div class="flip-box-front">
+                    <img width="500px" src="{{ code8.image1.url }}" alt="">
+                </div>
+                <div class="flip-box-back">
+                    <h2>Paris</h2>
+                    <p>What an amazing city</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-box">
+            <div class="flip-box-inner">
+                <div class="flip-box-front">
+                    <img width="100px" src="{{ code8.image2.url }}" alt="">
+                </div>
+                <div class="flip-box-back">
+                    <h2>Paris</h2>
+                    <p>What an amazing city</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-box">
+            <div class="flip-box-inner">
+                <div class="flip-box-front">
+                    <img width="100px" src="{{ code8.image3.url }}" alt="">
+                </div>
+                <div class="flip-box-back">
+                    <h2>Paris</h2>
+                    <p>What an amazing city</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
-    <!-- <img class="image" src="{{ services.image.url }}" alt=""> -->
-
-
 
 </html>

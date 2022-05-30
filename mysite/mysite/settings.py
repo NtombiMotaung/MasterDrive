@@ -120,8 +120,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = "static/"  # static files url to access tghem
-STATIC_ROOT = BASE_DIR / "static"
-STATICFILES_DIRS = [BASE_DIR / "devstatic"]
+STATIC_ROOT = BASE_DIR / "devstatic"
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
 MEDIA_URL = "media/"  # uploads to the website
 MEDIA_ROOT = BASE_DIR / "media"
