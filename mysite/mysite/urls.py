@@ -4,8 +4,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import render
 
+from gallery.models import BackgroundImage
+
 def index(request):
-    return render(request, "public/index.html")
+    bg = BackgroundImage.objects.last()
+    context = {
+        "bg": bg,
+    }
+    return render(request, "public/index.html", context)
 
 urlpatterns = (
     [
