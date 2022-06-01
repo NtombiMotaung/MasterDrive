@@ -7,7 +7,7 @@ from services.models import ContactImages
 # Create your views here.
 def get_services(request):
     image = ContactImages.objects.last()
-    print(image)
+    # print(image)
     done = {"images": image}
     return render(request, "public/services/services.html", done)
 

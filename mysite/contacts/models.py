@@ -6,3 +6,4 @@ class Contact(models.Model):
     surname = models.CharField(max_length=50)
     email = models.EmailField(max_length=150)
     message = models.TextField()
+

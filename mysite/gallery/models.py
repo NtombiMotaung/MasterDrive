@@ -7,4 +7,15 @@ class BackgroundImage(models.Model):
         upload_to="posts/bg/",
     )
 
+class GalleryImages(models.Model):
+    image1 = models.ImageField(
+    upload_to="posts/bg/",
+    )
+    image2 = models.ImageField(
+        upload_to="posts/bg/",
+    )
+    image3 = models.ImageField(
+        upload_to="posts/bg/",
+    )
+
 

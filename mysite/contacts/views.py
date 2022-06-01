@@ -5,6 +5,7 @@ from django.http import HttpResponse
 
 from services.models import ContactImages
 
+
 # Create your views here.
 def contact_page(request):
     if request.method == "POST":
@@ -21,6 +22,7 @@ def contact_page(request):
 
 
     images = ContactImages.objects.last()
+    
 
     form = ContactForm()
 

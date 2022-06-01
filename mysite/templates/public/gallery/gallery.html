@@ -1,18 +1,45 @@
+{% extends "base.html" %}
 {% load static %}
+{% block title %} services{% endblock %}
 
-<!DOCTYPE html>
+{% block styles %}
 
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'js/style.js' %}">
+<!-- <style>
+    body {
+    background-image: url("http://127.0.0.1:8000{{bg.image.url}}") !important;
+    /* background-color: #cccccc; */
+    }
+ 
+</style> -->
+<style>
+    body {
+        background: url("{{bg.image.url}}") fixed;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;      
+    }
+</style>
+{% endblock %}
 
-<html lang="en">
+{% block body %}
+    <div class = "flex "id="infoi" >
+    {% for post in image %}
+    <img id="myImg" class = "mx-10 rounded-xl" src="{{ post.image1.url }}" alt="Snow" style="width:100%;max-width:300px">
+    <img id="myImg" class = "mx-10 rounded-xl" src="{{ post.image2.url }}" alt="Snow" style="width:100%;max-width:300px">
+    <img id="myImg" class = "mx-10 rounded-xl" src="{{ post.image3.url }}" alt="Snow" style="width:100%;max-width:300px">
+    {% endfor %}
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
 
-<head>
-    <meta charset="UTF-8">
-    <title>WELCOME TO THE GALLERY PAGE</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
-        integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <!-- The Close Button -->
+    <span class="close">&times;</span>
 
+    <!-- Modal Content (The Image) -->
+    <img class="modal-content" id="img01">
 
-</html>
+    <!-- Modal Caption (Image Text) -->
+    <div id="caption"></div>
+    </div>
+{% endblock %}

@@ -6,4 +6,4 @@ def index(request):
     context = {
         "bg": bg,
     }
-    return render(request, "public/index.html", context)
+    return render(request, "public/gallery/gallery.html", context)
