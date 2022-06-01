@@ -16,5 +16,10 @@ class ContactImages(models.Model):
     image3 = models.ImageField(
         upload_to="posts/bg/",
     )
+
+class ServicesBackground(models.Model):
+    image = models.ImageField(
+        upload_to="posts/bg/",
+    )
     
     

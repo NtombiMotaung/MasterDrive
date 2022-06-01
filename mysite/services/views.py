@@ -1,14 +1,17 @@
 from django.http import Http404
 from django.shortcuts import render
 from services.models import Service
-from services.models import ContactImages
+from services.models import ContactImages, ServicesBackground
 
 
 # Create your views here.
 def get_services(request):
     image = ContactImages.objects.last()
-    # print(image)
-    done = {"images": image}
+    bg = ServicesBackground.objects.last()
+    done = {
+        "images": image,
+        "bg" : bg,
+    }
     return render(request, "public/services/services.html", done)
 
 

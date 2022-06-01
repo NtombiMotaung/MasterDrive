@@ -1,8 +1,8 @@
-from gallery.models import BackgroundImage
+from gallery.models import GalleryBackground
 from django.shortcuts import render 
 
 def index(request):
-    bg = BackgroundImage.objects.last()
+    bg = GalleryBackground.objects.last()
     context = {
         "bg": bg,
     }

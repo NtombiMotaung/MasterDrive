@@ -1,8 +1,8 @@
 from django.contrib import admin
-from gallery.models import BackgroundImage, GalleryImages
+from gallery.models import GalleryBackground, GalleryImages
 
 # Register your models here.
 
-admin.site.register(BackgroundImage)
+admin.site.register(GalleryBackground)
 admin.site.register(GalleryImages)
 

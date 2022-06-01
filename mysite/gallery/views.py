@@ -1,12 +1,12 @@
 from django.shortcuts import render
 
-from gallery.models import GalleryImages, BackgroundImage
+from gallery.models import GalleryImages, GalleryBackground
 
 
 # Create your views here.
 def gallery(request):
     image = GalleryImages.objects.all()
-    bg = BackgroundImage.objects.last()
+    bg = GalleryBackground.objects.last()
     context = {
         "image" : image,
         "bg" : bg,
