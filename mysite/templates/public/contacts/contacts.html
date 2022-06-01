@@ -7,6 +7,16 @@
         background-repeat: no-repeat;
         background-size: 100% 100%;      
     }
+    /* Set a style for the submit button */
+    .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    }
 </style>
 
 {% endblock%}
@@ -28,7 +38,7 @@
         <form class="shadow-xl" method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Submit</button>
+            <button type="submit" class="btn">Submit</button>
         </form>
     </div>
 </div>

@@ -1,6 +1,19 @@
-<nav class="flex">
-    <a class = "mx-12 text" style="color:white" href="/">home</a>
-    <a class="mx-12 text" style="color:white" href="{% url 'services:get-services-page' %}">services</a>
-    <a class="mx-12 text" style="color:white" href="{% url 'gallery:get-gallery-page' %}">gallery</a>
-    <a class="mx-12 text" style="color:white" href="{% url 'contacts:get-contacts-page' %}">contact</a>
-</nav>
+
+{% block styles %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+<!-- <button class="btn home">Home</button>
+<button class="btn services">Services</button>
+<button class="btn gallery">gallery</button>
+<button class="btn contact">contact</button>
+<button class="btn default">Default</button>  -->
+<a href="/"><button class="btn home">home</button></a>
+<a href="{% url 'services:get-services-page' %}"><button class="btn home">services</button></a>
+<a href="{% url 'gallery:get-gallery-page' %}"><button class="btn home">gallery</button></a>
+<a href="{% url 'contacts:get-contacts-page' %}"><button class="btn home">contacts</button></a>
+
+
+
+{% endblock %}
