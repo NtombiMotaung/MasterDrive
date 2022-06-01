@@ -5,3 +5,4 @@ from gallery.models import BackgroundImage, GalleryImages
 
 admin.site.register(BackgroundImage)
 admin.site.register(GalleryImages)
+

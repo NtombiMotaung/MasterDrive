@@ -6,13 +6,7 @@
 
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 <link rel="stylesheet" href="{% static 'js/style.js' %}">
-<!-- <style>
-    body {
-    background-image: url("http://127.0.0.1:8000{{bg.image.url}}") !important;
-    /* background-color: #cccccc; */
-    }
- 
-</style> -->
+
 <style>
     body {
         background: url("{{bg.image.url}}") fixed;
@@ -38,6 +32,8 @@
     
     
     {% endfor %}
+
+    
     </div>
     <!-- The Modal -->
     <div id="myModal" class="modal">
@@ -51,4 +47,6 @@
     <!-- Modal Caption (Image Text) -->
     <div id="caption"></div>
     </div>
+
+    
 {% endblock %}

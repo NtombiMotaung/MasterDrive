@@ -3,7 +3,7 @@ from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 
-from services.models import ContactImages
+from contacts.models import ContactPageImage, ContactBackground
 
 
 # Create your views here.
@@ -21,7 +21,8 @@ def contact_page(request):
             return redirect("contacts:get-contacts-page")
 
 
-    images = ContactImages.objects.last()
+    images = ContactPageImage.objects.last()
+    bg = ContactBackground.objects.last()
     
 
     form = ContactForm()
@@ -29,5 +30,6 @@ def contact_page(request):
     context = {
         "form":form,
         "images": images,
+        "bg" : bg,
     }
     return render(request, "public/contacts/contacts.html", context)
