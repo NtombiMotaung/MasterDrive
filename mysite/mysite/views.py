@@ -1,9 +1,9 @@
-from gallery.models import GalleryBackground
+from gallery.models import  HomePicture
 from django.shortcuts import render 
 
 def index(request):
-    bg = GalleryBackground.objects.last()
+    bg = HomePicture.objects.last()
     context = {
         "bg": bg,
     }
-    return render(request, "public/gallery/gallery.html", context)
+    return render(request, "public/index.html", context)

@@ -110,10 +110,7 @@
 /* Set a specific color for each brand */
 
 /* Facebook */
-.fa-facebook {
-  background: #3B5998;
-  color: white;
-}
+
 
  /* Style the Image Used to Trigger the Modal */
  #myImg {
@@ -209,3 +206,4 @@
 .btn:hover {
   background-color: RoyalBlue;
 } 
+

@@ -1,5 +1,9 @@
 from django.db import models
 
+class HomePicture(models.Model):
+    image = models.ImageField(
+        upload_to="posts/bg/",
+    )
 
 
 class GalleryBackground(models.Model):
