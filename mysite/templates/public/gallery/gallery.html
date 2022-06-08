@@ -1,64 +1,65 @@
-{% extends "base.html" %}
+{% include 'components/navbar.html' %}
 {% load static %}
-{% block title %} services{% endblock %}
+{% block title %} GALLERY{% endblock %}
 
 {% block styles %}
 
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
-<link rel="stylesheet" href="{% static 'js/style.js' %}">
+<!-- <link rel="stylesheet" href="{% static 'js/style.js' %}"> -->
 
 <style>
-    body {
-        background: url("{{bg.image.url}}") fixed;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;      
-    }
-        /* Set a style for the submit button */
-        .btn {
-    background-color: #4a4d4b;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
-    }
+   body {
+  background: url("{{bg.image.url}}") fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;      
+}
+
+
+
+#myImg{
+  height: 360px;
+  padding : 50px;
+  
+}
+     
 </style>
 {% endblock %}
 
 
 
 {% block body %}
-    <div class = "flex "id="infoi" >
-    {% for post in image %}
-    <img id="myImg" class = "mx-10 rounded-xl" src="{{ post.image1.url }}" alt="Snow" style="width:100%;max-width:300px">
-    <img id="myImg" class = "mx-10 rounded-xl" src="{{ post.image2.url }}" alt="Snow" style="width:100%;max-width:300px">
-    <img id="myImg" class = "mx-10 rounded-xl" src="{{ post.image3.url }}" alt="Snow" style="width:100%;max-width:300px">
-    <img id="myImg" class = "mx-10 rounded-xl" src="{{ post.image4.url }}" alt="Snow" style="width:100%;max-width:300px">
-    <img id="myImg" class = "mx-10 rounded-xl" src="{{ post.image5.url }}" alt="Snow" style="width:100%;max-width:300px">
-    <img id="myImg" class = "mx-10 rounded-xl" src="{{ post.image6.url }}" alt="Snow" style="width:100%;max-width:300px">
-    <img id="myImg" class = "mx-10 rounded-xl" src="{{ post.image7.url }}" alt="Snow" style="width:100%;max-width:300px">
-    <img id="myImg" class = "mx-10 rounded-xl" src="{{ post.image8.url }}" alt="Snow" style="width:100%;max-width:300px">
-    <img id="myImg" class = "mx-10 rounded-xl" src="{{ post.image9.url }}" alt="Snow" style="width:100%;max-width:300px">
 
+<br>
     
+    <div>
+        
+        {% for post in image %}
+        <img id="myImg" class = "mx-10 rounded-xl" src="{{ post.image1.url }}" alt="Snow" style="width:100%;max-width:300px">
+        <img id="myImg" class = "mx-10 rounded-xl" src="{{ post.image2.url }}" alt="Snow" style="width:100%;max-width:300px">
+        <img id="myImg" class = "mx-10 rounded-xl" src="{{ post.image3.url }}" alt="Snow" style="width:100%;max-width:300px">
+        <img id="myImg" class = "mx-10 rounded-xl" src="{{ post.image4.url }}" alt="Snow" style="width:100%;max-width:300px">
+        <img id="myImg" class = "mx-10 rounded-xl" src="{{ post.image5.url }}" alt="Snow" style="width:100%;max-width:300px">
+        <img id="myImg" class = "mx-10 rounded-xl" src="{{ post.image6.url }}" alt="Snow" style="width:100%;max-width:300px">
+        <img id="myImg" class = "mx-10 rounded-xl" src="{{ post.image7.url }}" alt="Snow" style="width:100%;max-width:300px">
+        <img id="myImg" class = "mx-10 rounded-xl" src="{{ post.image8.url }}" alt="Snow" style="width:100%;max-width:300px">
+        <img id="myImg" class = "mx-10 rounded-xl" src="{{ post.image9.url }}" alt="Snow" style="width:100%;max-width:300px">
     
-    {% endfor %}
+        {% endfor %}
 
-    
-    </div>
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
+        <div id="myModal" class="modal">
 
-    <!-- The Close Button -->
-    <span class="close">&times;</span>
+            <span class="close">&times;</span>
+        
+            <img class="modal-content" id="img01">
+        
+            <div id="caption"></div>
+            </div> -->
 
-    <!-- Modal Content (The Image) -->
-    <img class="modal-content" id="img01">
+        
 
-    <!-- Modal Caption (Image Text) -->
-    <div id="caption"></div>
+
     </div>
 
     
 {% endblock %}
+{% include 'components/footer.html' %}
