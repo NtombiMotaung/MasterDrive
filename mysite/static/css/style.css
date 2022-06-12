@@ -250,8 +250,26 @@ footer p:nth-child(2){
   bottom: 35px;
   font-size: 14px;
 
-
 }
+.center{
+  text-align: center;
+}
+
+.center h2{
+  
+  margin-bottom: 15px;
+}
+
+
+.service-content{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(370px, auto));
+  grid-gap: 2rem;
+  align-items: center;
+  margin-top: 4.5rem;
+}
+
+
 
 
 
