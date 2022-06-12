@@ -1,4 +1,4 @@
-{% include 'components/navbar.html' %}
+<!-- {% include 'components/navbar.html' %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -20,66 +20,60 @@
         font-size: 20px;
         padding-left: 20px;
       }
+      .row{
+        display: flex;
+        height: 88%;
+        align-items: center;
+      }
+      .col{
+        flex-basis: 50%;
+      }
+
+      h1{
+        color: black;
+        font-size: 50px;
+      }
+      .card1{
+        background-image: url("{{images.image1.url}}");
+    }
+
+    .card2{
+        background-image: url("{{images.image2.url}}");
+    }
+
+    .card3{
+        background-image: url("{{images.image3.url}}");
+    }
+
+    .card4{
+        background-image: url("{{images.image1.url}}");
+    }
     </style>
   </head>
   
+<div class = "row">
+  <div class = "col">
+    <h1>Driving Masters</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+      Ipsam in at suscipit soluta quae quos sapiente officiis, 
+      consequuntur assumenda ad quibusdam, nemo asperiores quisquam 
+      fuga earum deleniti consequatur possimus facilis.</p>
 
-    <body>
-      <div class="container">
-        <div class="image">
-          <img src="https://i.pinimg.com/originals/26/ea/fc/26eafc0b14488fea03fa8fa9751203ff.jpg">
-        </div>
-        <div class="text">
-          <h1>Paris is one of the most beautiful cities in France.</h1>
-        </div>
-      </div>
-    </body>
-  </html>
+
+  </div>
+
+
+</div>
+
+
+
     
 
-    <!-- <div class="container" >
-        <div class="image">
-            <img src="{{bg.image.url}}" height="650">
-          </div>    
-      <div class="text">
-        <h1>The best driving school in Alberton</h1>
-      </div>
-    </div>
-</div> -->
 
 
-<!-- <!-- <div class="container" style="background-color:DodgerBlue;">
-    <div class="image">
-        <img src="https://i.pinimg.com/originals/26/ea/fc/26eafc0b14488fea03fa8fa9751203ff.jpg">
-      </div>    
-  <div class="text">
-    <h1>Paris is one of the most beautiful cities in France.</h1>
-  </div>
-</div>
-</div> -->
 
 
-<div class="container" ">
-    <div class="image">
-        <img src="https://i.pinimg.com/originals/26/ea/fc/26eafc0b14488fea03fa8fa9751203ff.jpg">
-      </div>    
-  <div class="text">
-    <h1>Paris is one of the most beautiful cities in France.</h1>
-  </div>
-</div>
-</div> -->
 
-<!-- 
-<div class="container" style="background-color:DodgerBlue;">
-    <div class="image">
-        <img src="https://i.pinimg.com/originals/26/ea/fc/26eafc0b14488fea03fa8fa9751203ff.jpg">
-      </div>    
-  <div class="text">
-    <h1>Paris is one of the most beautiful cities in France.</h1>
-  </div>
-</div>
-</div>
-  </body> -->
 </html>
 
 
@@ -89,4 +83,52 @@
 {% block body %}{% endblock %}
 {% include 'components/footer.html' %}
 
+ -->
 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Home</title>
+ </head>
+ <body>
+  {% load static %}
+   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+  <div class="hero">
+    <nav>
+      {% include 'components/navbar.html' %}
+
+      <h2 class="logo">Driving <span>Masters</span></h2>
+    </nav>
+
+    <div class="content">
+      <h4>Hello , my name is</h4>
+      <h1>MasterDriving</h1>
+      <h3>We are a driving school</h3>
+    </div>
+  </div>
+<!--About Section-->
+  <section class="about">
+    <div class="main">
+      <img src="https://i.pinimg.com/originals/26/ea/fc/26eafc0b14488fea03fa8fa9751203ff.jpg">      <div class="about-text">
+          <h2>About Us</h2>
+          <h5>Driving <span>Masters</span></h5>
+          <p>Lorem ipsum dolor sit amet consectetur 
+            adipisicing elit. Incidunt error quidem 
+            dolores provident blanditiis, aut officiis 
+            doloremque nostrum, dicta iusto nihil sequi? 
+            Molestias, a? Consectetur quia eaque ex 
+            adipisci eum!</p>
+            <button type="button">Contact</button>
+
+      </div>
+    </div>
+  </section>
+
+ 
+ </body>
+ </html>
