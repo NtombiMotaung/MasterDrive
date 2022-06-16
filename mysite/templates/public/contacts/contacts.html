@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
-
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% block styles %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <style>
     body {
         background: url("{{bg.image.url}}") fixed;
@@ -21,6 +23,82 @@
 
 {% endblock%}
 {% block body %}
+
+<section class="contact">
+<div class="contactcontent">
+    
+    <h2>Contact Us</h2>
+    <p>Lorem ipsum dolor sit amet 
+        consectetur adipisicing elit.
+         Praesentium in repudiandae 
+         non amet quis commodi maiores
+         , esse animi. In, a provident
+          facere amet et voluptate doloribus 
+          accusamus id natus laborum. </p>
+</div>
+
+<div class="container">
+    <div class="contactInfo">
+        <div class="boxx">
+            <div class="icon">
+                <span class="material-symbols-outlined">
+                    pin_drop
+                    </span>
+            </div>
+            
+            <h3> Address</h3>
+            <p>khello hi 
+                <br>
+                how is life
+                <br>
+                its fine sothini
+            </p>
+          
+        </div>
+    </div>
+    <div class="boxx">
+        <div class="icon">
+            <span class="material-symbols-outlined">
+                mail
+                </span>
+        </div>
+        
+        <h3> Address</h3>
+        <p>khello hi 
+            <br>
+            how is life
+            <br>
+            its fine sothini
+        </p>
+      
+    </div>
+</div>
+<div class="boxx">
+    <div class="icon">
+        <span class="material-symbols-outlined">
+            call
+            </span>
+    </div>
+   
+    <h3> Address</h3>
+    <p>khello hi 
+        <br>
+        how is life
+        <br>
+        its fine sothini
+    </p>
+  
+</div>
+</div>
+   
+
+
+</div>
+
+</section>
+
+
+
 <div class="flex">
  
     <div class="w- 6/6 px-24" >
