@@ -215,11 +215,7 @@ function producePrompt(message, promptLocation, color) {
                     <!-- <input type="text" name="" required = "required"> -->
                     <span>Name</span>
                 </div>
-                <div class="inputBox">
-                     <label for = "contact-name">Name</label> 
-                    <input type="text" class="form-control" id="contact-name" name="name"       placeholder="Enter your name.." onkeyup='validateName()'>
-                    <span class='error-message' id='name-error'></span>
-                </div>
+                
                 <div class="inputBox">
                     <label for="contact-email">Email</label>
                     <input type="email" class = "form-control" id = "contact-email"
@@ -232,8 +228,9 @@ function producePrompt(message, promptLocation, color) {
                     <span class='error-message' id='phone-error'></span>
                 </div>
                 <div class="inputBox">
-                    <textarea required = "required"></textarea>
-                    <span>Message</span>
+                    <label for='contactMessage'>Your Message</label>
+                    <textarea class="form-control" rows="5" id='contact-message'  name='message'  placeholder="Enter a brief message" onkeyup='validateMessage()'></textarea>
+                    <span class='error-message' id='message-error'></span>
                 </div>
               
                 <div class="inputBox">
