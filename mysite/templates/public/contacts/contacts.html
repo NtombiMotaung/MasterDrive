@@ -216,12 +216,15 @@ function producePrompt(message, promptLocation, color) {
                     <span>Name</span>
                 </div>
                 <div class="inputBox">
-                    <input type="text" name="" required = "required">
-                    <span>Surname</span>
+                     <label for = "contact-name">Name</label> 
+                    <input type="text" class="form-control" id="contact-name" name="name"       placeholder="Enter your name.." onkeyup='validateName()'>
+                    <span class='error-message' id='name-error'></span>
                 </div>
                 <div class="inputBox">
-                    <input type="text" name="" required = "required">
-                    <span>Email</span>
+                    <label for="contact-email">Email</label>
+                    <input type="email" class = "form-control" id = "contact-email"
+                    name="email" placeholder="Enter Email" onkeyup="validateEmail()">
+                    <span class="error-message", id="email-error"></span>
                 </div>
                 <div class="inputBox">
                     <label for="contact-phone">Phone Number</label>
