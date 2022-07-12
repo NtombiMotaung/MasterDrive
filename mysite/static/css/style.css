@@ -1,7 +1,7 @@
 *{
   padding: 0;
   margin: 0;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
   box-sizing: border-box;
 }
 
@@ -29,13 +29,18 @@
 .logo{
   color: black;
   font-size: 35px;
-  letter-spacing: 1px;
+  letter-spacing: 1px;  
   cursor: pointer;
 
 }
 
 span{
   color: red;
+}
+@media screen and (min-width: 375px) {
+  span{
+    color: rgb(255, 0, 0);
+  }
 }
 
 .content{
@@ -164,6 +169,7 @@ h5{
   line-height: 27px;
   margin-bottom: 25px;
 }
+
 
 .card .button{
   background-color: red;

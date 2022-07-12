@@ -8,41 +8,146 @@
     {% load static %}    
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<script type="text/javascript">
+    function validateName() {
+
+      var name = document.getElementById('contact-name').value;
+
+      if(name.length == 0) {
+
+        producePrompt('Name is required', 'name-error' , 'red')
+        return false;
+
+    }
+
+    if (!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)) {
+
+        producePrompt('First and last name, please.','name-error', 'red');
+        return false;
+
+    }
+
+    producePrompt('Valid', 'name-error', 'green');
+    return true;
+
+}
+
+function validatePhone() {
+
+  var phone = document.getElementById('contact-phone').value;
+
+  if(phone.length == 0) {
+      producePrompt('Phone number is required.', 'phone-error', 'red');
+      return false;
+  }
+
+  if(phone.length != 10) {
+      producePrompt('Include area code.', 'phone-error', 'red');
+      return false;
+  }
+
+  if(!phone.match(/^[0-9]{10}$/)) {
+      producePrompt('Only digits, please.' ,'phone-error', 'red');
+      return false;
+  }
+
+  producePrompt('Valid', 'phone-error', 'green');
+  return true;
+
+}
+
+function validateEmail () {
+
+  var email = document.getElementById('contact-email').value;
+
+  if(email.length == 0) {
+
+    producePrompt('Email Invalid','email-error', 'red');
+    return false;
+
+}
+
+if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+
+    producePrompt('Email Invalid', 'email-error', 'red');
+    return false;
+
+}
+
+producePrompt('Valid', 'email-error', 'green');
+return true;
+
+}
+
+function validateMessage() {
+  var message = document.getElementById('contact-message').value;
+  var required = 30;
+  var left = required - message.length;
+
+  if (left > 0) {
+    producePrompt(left + ' more characters required','message-error','red');
+    return false;
+}
+
+producePrompt('Valid', 'message-error', 'green');
+return true;
+
+}
+
+function validateForm() {
+  if (!validateName() || !validatePhone() || !validateEmail() || !validateMessage()) {
+    jsShow('submit-error');
+    producePrompt('Please fix errors to submit.', 'submit-error', 'red');
+    setTimeout(function(){jsHide('submit-error');}, 2000);
+    return false;
+}
+else {
+
+}
+}
+
+function jsShow(id) {
+  document.getElementById(id).style.display = 'block';
+}
+
+function jsHide(id) {
+  document.getElementById(id).style.display = 'none';
+}
+
+
+function producePrompt(message, promptLocation, color) {
+
+  document.getElementById(promptLocation).innerHTML = message;
+  document.getElementById(promptLocation).style.color = color;
+
+}
+
+</script>
 </head>
+
 <body>
+    
+    <!-- <script href = "{% static 'js/style.js %" ></script> -->
     {% include 'components/navbar.html' %}
     <section class="contact">
     <div class="contactcontent">
         <h2>Contact Us</h2>
-        <p>Lorem ipsum dolor sit amet consectetur 
-            adipisicing elit. Dicta porro 
-            necessitatibus cupiditate voluptatibus
-             facilis neque recusandae, harum debitis
-              quibusdam dolore suscipit, nihil sit
-               mollitia repudiandae ea saepe.
-                Dicta, quis aspernatur.</p>
+        <p>
+            Contact us directly if you have any questions
+            <br>
+            One of our staff members will be happy to contact
+            you directly and answer your questions as soon 
+            as possible 
+
+
+        </p>
 
     </div>
 
     <div class="containers">
         <div class="contactInfo">
-            <div class="boxx">
-                <div class="icon">
-                    <span class="material-symbols-outlined">
-                        <span class="material-symbols-outlined">
-                            pin_drop
-                            </span>
-                        </span>
-                </div>
-                <div class="text">
-                    <h3>Address</h3>
-                    <p>Rietvlei Farm, 101 Swartkoppies Road
-                        <br>
-                        Alberton 1448
-                       
-                    </p>
-                </div>
-            </div>
+            
             <div class="boxx">
                 <div class="icon">
                     <span class="material-symbols-outlined">
@@ -82,12 +187,32 @@
                     </p>
                 </div>
             </div>
+            <div class="boxx">
+                <div class="icon">
+                    <span class="material-symbols-outlined">
+                        <span class="material-symbols-outlined">
+                            pin_drop
+                            </span>
+                        </span>
+                </div>
+                <div class="text">
+                    <h3>Address</h3>
+                    <p>Rietvlei Farm, 101 Swartkoppies Road
+                        <br>
+                        Alberton 1448
+                       
+                    </p>
+                </div>
+            </div>
         </div>
         <div class="contactForm">
-            <form>
+            <form action="https://formsubmit.co/ntombifuthimotaung7@gmail.com" method="POST">
                 <h2>Send Message</h2>
                 <div class="inputBox">
-                    <input type="text" name="" required = "required">
+                    <label for = "contact-name">Name</label> 
+                    <input type="text" class="form-control" id="contact-name" name="name"       placeholder="Enter your name.." onkeyup='validateName()'>
+                    <span class='error-message' id='name-error'></span>
+                    <!-- <input type="text" name="" required = "required"> -->
                     <span>Name</span>
                 </div>
                 <div class="inputBox">
@@ -99,9 +224,15 @@
                     <span>Email</span>
                 </div>
                 <div class="inputBox">
+                    <label for="contact-phone">Phone Number</label>
+                    <input type="tel" class="form-control" id="contact-phone" name="phone" placeholder="Ex: 1231231234" onkeyup='validatePhone()'>
+                    <span class='error-message' id='phone-error'></span>
+                </div>
+                <div class="inputBox">
                     <textarea required = "required"></textarea>
                     <span>Message</span>
                 </div>
+              
                 <div class="inputBox">
                     <input type="submit" name="" value="send"
                     
