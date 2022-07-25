@@ -12,4 +12,5 @@ function validateForm() {
     nameInput.classList.add("error-border");
   }
   
+  
 }

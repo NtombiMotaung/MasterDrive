@@ -16,9 +16,6 @@
     
       {% include 'components/navbar.html' %}
 
-
-   
-
     <div class="content">
       <h4>Hello , we are</h4>
       <h2 class="logo">Driving<span>Masters</span> </h2>
@@ -41,7 +38,7 @@
             simulator training, refresher driver training and help with 
             learners license 
           </p>
-            <button type="button">Contact</button>
+            <a class="button" href="{% url 'services:get-services-page' %}"> Contact us</a>
 
       </div>
     </div>

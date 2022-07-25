@@ -96,11 +96,11 @@ return true;
 }
 
 function validateForm() {
-  if (!validateName() || !validatePhone() || !validateEmail() || !validateMessage()) {
+  if (validateName() || validatePhone() || validateEmail() || validateMessage()) {
     jsShow('submit-error');
     producePrompt('Please fix errors to submit.', 'submit-error', 'red');
-    setTimeout(function(){jsHide('submit-error');}, 2000);
-    return false;
+    // setTimeout(function(){jsHide('submit-error');}, 2000);
+    return true;
 }
 else {
 
@@ -210,7 +210,7 @@ function producePrompt(message, promptLocation, color) {
                 <h2>Send Message</h2>
                 <div class="inputBox">
                     <label for = "contact-name">Name</label> 
-                    <input type="text" class="form-control" id="contact-name" name="name"       placeholder="Enter your name.." onkeyup='validateName()'>
+                    <input type="text" class="form-control" id="contact-name" name="name" placeholder="Enter your name.." onkeyup='validateName()'>
                     <span class='error-message' id='name-error'></span>
                     <!-- <input type="text" name="" required = "required"> -->
                     <span>Name</span>
