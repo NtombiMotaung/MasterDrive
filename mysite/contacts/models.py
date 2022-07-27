@@ -10,7 +10,3 @@ class Contact(models.Model):
 
 
 
-class ContactBackground(models.Model):
-    image = models.ImageField(
-        upload_to = "posts/bg",
-    )

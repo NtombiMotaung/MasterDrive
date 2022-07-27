@@ -3,7 +3,7 @@ from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 
-from contacts.models import  ContactBackground
+
 
 
 # Create your views here.
@@ -22,7 +22,7 @@ def contact_page(request):
 
 
     
-    bg = ContactBackground.objects.last()
+    
     
 
     form = ContactForm()
@@ -30,6 +30,6 @@ def contact_page(request):
     context = {
         "form":form,
         
-        "bg" : bg,
+        
     }
     return render(request, "public/contacts/contacts.html", context)
