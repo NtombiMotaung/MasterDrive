@@ -1,5 +1,5 @@
 from django import forms
-# from contacts.models import Contact
+from contacts.models import Contact
 
 class ContactForm(forms.ModelForm):
     name = forms.CharField(required=True,widget=forms.TextInput(
@@ -32,7 +32,7 @@ class ContactForm(forms.ModelForm):
 
 
     class Meta:
-        # model = Contact
+        model = Contact
         fields = (
             "name",
             "surname",

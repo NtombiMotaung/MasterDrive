@@ -445,7 +445,7 @@ footer p:nth-child(2){
 
 .contactForm h2{
   font-size: 30px;
-  color: #333;
+  color: white;
   font-weight: 500;
 }
 
@@ -455,6 +455,9 @@ footer p:nth-child(2){
   margin-top: 10px;
 
 }
+
+
+
 .contactForm .inputBox input,
 .contactForm .inputBox textarea{
   width: 100%;

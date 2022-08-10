@@ -8,5 +8,10 @@ class Contact(models.Model):
     email = models.EmailField(max_length=150)
     message = models.TextField()
 
+class ContactBackgrounds(models.Model):
+    image = models.ImageField(
+        upload_to="posts/bg/",
+    )
+
 
 
