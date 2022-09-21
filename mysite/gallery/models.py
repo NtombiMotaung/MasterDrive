@@ -5,6 +5,10 @@ class HomePicture(models.Model):
         upload_to="posts/bg/",
     )
 
+class WelcomePicture(models.Model):
+    image = models.ImageField(
+        upload_to="posts/bg/",
+    )
 
 class GalleryBackground(models.Model):
     image = models.ImageField(
